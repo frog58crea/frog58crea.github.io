@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吧有你春暖花开 - 温暖治愈系社区与生活指南</title>
+    <meta name="description" content="吧有你春暖花开，专注于分享温暖治愈的生活瞬间、情感故事与春日美景。提供心情记录、美好发现及温暖互动的在线社区平台。">
+    <meta name="keywords" content="吧有你春暖花开, 治愈系, 春日生活, 情感社区, 温暖生活, 心情记录">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ffb7b2;
+            --secondary-color: #ffdac1;
+            --accent-color: #e2f0cb;
+            --text-dark: #4a4a4a;
+            --text-light: #7a7a7a;
+            --white: #ffffff;
+            --bg-off-white: #fdfbf7;
+            --shadow-sm: 0 2px 8px rgba(255, 183, 178, 0.2);
+            --shadow-md: 0 8px 24px rgba(255, 218, 193, 0.3);
+            --radius-md: 12px;
+            --radius-lg: 24px;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-off-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏 */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn-join {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn-join:hover {
+            background-color: #ff9e99;
+            transform: translateY(-2px);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            padding: 80px 0;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,183,178,0.15) 0%, transparent 60%);
+            animation: float 20s infinite linear;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff9e99;
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--text-dark);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* 搜索框 */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 50px;
+            padding: 8px 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(255,183,178,0.3);
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            flex: 1;
+            padding: 10px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            background: transparent;
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: #ff9e99;
+        }
+
+        /* 分类导航 */
+        .category-nav {
+            padding: 40px 0;
+            background-color: white;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .category-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .category-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: var(--radius-md);
+            transition: background-color 0.3s;
+        }
+
+        .category-item:hover {
+            background-color: #fff5f5;
+        }
+
+        .category-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--bg-off-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .category-item:hover .category-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .category-name {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* 内容区域 */
+        .main-content {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .section-more {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .section-more:hover {
+            color: var(--primary-color);
+        }
+
+        /* 网格布局 */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* 卡片样式 */
+        .card {
+            background: white;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #f0f0f0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            background-color: rgba(255, 183, 178, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 15px;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        .card-author {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+        }
+
+        /* 热门榜单 */
+        .ranking-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 15px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s;
+        }
+
+        .ranking-item:hover {
+            transform: translateX(5px);
+        }
+
+        .rank-num {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .rank-num.top-1 { color: #ff6b6b; }
+        .rank-num.top-2 { color: #feca57; }
+        .rank-num.top-3 { color: #48dbfb; }
+
+        .rank-content {
+            flex: 1;
+        }
+
+        .rank-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--text-dark);
+        }
+
+        .rank-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .rank-score {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* 关于/特色 */
+        .features {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .feature-item {
+            padding: 20px;
+        }
+
+        .feature-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #333;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none; /* 简化版：移动端隐藏菜单 */
+            }
+
+            .nav-wrapper {
+                justify-content: center;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span style="font-size: 1.8rem;">🌸</span>
+                <span>吧有你</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">治愈故事</a>
+                <a href="#">春日美景</a>
+                <a href="#">生活指南</a>
+                <a href="#">话题讨论</a>
+            </nav>
+            <a href="#" class="btn-join">加入我们</a>
+        </div>
+    </header>
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>让生活充满<span class="highlight">春暖花开</span>的温暖瞬间</h1>
+            <p>在这里，记录每一份微小的感动，发现生活中的美好。吧有你，与你一起分享治愈系内容。</p>
+            
+            <div class="hero-actions">
+                <a href="#" class="btn-primary">开始分享</a>
+                <a href="#" class="btn-secondary">浏览热门</a>
+            </div>
+
+            <div class="search-container">
+                <form class="search-box" onsubmit="event.preventDefault();">
+                    <input type="text" placeholder="搜索温暖的故事、话题或图片...">
+                    <button type="submit">🔍</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 分类导航 -->
+    <div class="category-nav">
+        <div class="container">
+            <ul class="category-list">
+                <li class="category-item">
+                    <div class="category-icon">📖</div>
+                    <span class="category-name">情感日记</span>
+                </li>
+                <li class="category-item">
+                    <div class="category-icon">🌿</div>
+                    <span class="category-name">自然风光</span>
+                </li>
+                <li class="category-item">
+                    <div class="category-icon">🏠</div>
+                    <span class="category-name">家居生活</span>
+                </li>
+                <li class="category-item">
+                    <div class="category-icon">🍰</div>
+                    <span class="category-name">美食探店</span>
+                </li>
+                <li class="category-item">
+                    <div class="category-icon">🧘</div>
+                    <span class="category-name">治愈心情</span>
+                </li>
+                <li class="category-item">
+                    <div class="category-icon">🎨</div>
+                    <span class="category-name">手作DIY</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <main class="container main-content">
+        
+        <!-- 热门推荐 -->
+        <section class="section-block">
+            <div class="section-header">
+                <h2 class="section-title">本周热门</h2>
+                <a href="#" class="section-more">查看全部 <span>→</span></a>
+            </div>
+            
+            <div class="grid-layout">
+                <!-- 卡片 1 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/spring1/400/250" alt="春日公园" class="card-image">
+                    <div class="card-body">
+                        <span class="card-tag">自然风光</span>
+                        <h3 class="card-title">迷失在城市的樱花雨中</h3>
+                        <p class="card-desc">今天去市中心的公园散步，意外发现了一片盛开的樱花林。阳光透过花瓣洒下斑驳的光影，仿佛整个世界都温柔了下来。</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="https://picsum.photos/seed/user1/50/50" alt="用户头像" class="avatar">
+                                <span>小暖</span>
+                            </div>
+                            <span>3.2k 阅读</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 卡片 2 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/coffee/400/250" alt="手冲咖啡" class="card-image">
+                    <div class="card-body">
+                        <span class="card-tag">生活指南</span>
+                        <h3 class="card-title">周末的治愈系早晨：手冲咖啡</h3>
+                        <p class="card-desc">周末不用早起上班，慢悠悠地为自己泡一杯手冲咖啡。看着咖啡粉慢慢膨胀，闻着淡淡的焦香，心情也随之平静。</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="https://picsum.photos/seed/user2/50/50" alt="用户头像" class="avatar">
+                                <span>咖啡控</span>
+                            </div>
+                            <span>1.8k 阅读</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 卡片 3 -->
+                <article class="card">
+                    <img src="https://picsum.photos/seed/dog/400/250" alt="狗狗" class="card-image">
+                    <div class="card-body">
+                        <span class="card-tag">萌宠互动</span>
+                        <h3 class="card-title">被一只流浪猫治愈的午后</h3>
+                        <p class="card-desc">在楼下便利店门口遇到一只胖乎乎的橘猫，它蹭了蹭我的裤脚，那一刻感觉所有的疲惫都消失了。</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="https://picsum.photos/seed/user3/50/50" alt="用户头像" class="avatar">
+                                <span>Momo</span>
+                            </div>
+                            <span>5.6k 阅读</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 榜单与互动 -->
+        <section class="section-block" style="margin-top: 60px;">
+            <div class="grid-layout" style="grid-template-columns: 2fr 1fr;">
+                <!-- 列表 -->
+                <div>
+                    <div class="section-header">
+                        <h2 class="section-title">最新发布</h2>
+                        <a href="#" class="section-more">更多 <span>→</span></a>
+                    </div>
+                    <div class="ranking-list">
+                        <a href="#" class="ranking-item">
+                            <div class="rank-num top-1">1</div>
+                            <div class="rank-content">
+                                <h4 class="rank-title">春天来了，该换床单了</h4>
+                                <span class="rank-meta">生活小技巧 · 2小时前</span>
+                            </div>
+                            <span class="rank-score">98分</span>
+                        </a>
+                        <a href="#" class="ranking-item">
+                            <div class="rank-num top-2">2</div>
+                            <div class="rank-content">
+                                <h4 class="rank-title">记录我的30天早起打卡</h4>
+                                <span class="rank-meta">自我提升 · 5小时前</span>
+                            </div>
+                            <span class="rank-score">95分</span>
+                        </a>
+                        <a href="#" class="ranking-item">
+                            <div class="rank-num top-3">3</div>
+                            <div class="rank-content">
+                                <h4 class="rank-title">超市里的特价蔬菜合集</h4>
+                                <span class="rank-meta">省钱攻略 · 昨天</span>
+                            </div>
+                            <span class="rank-score">92分</span>
+                        </a>
+                        <a href="#" class="ranking-item">
+                            <div class="rank-num">4</div>
+                            <div class="rank-content">
+                                <h4 class="rank-title">整理书架的治愈过程</h4>
+                                <span class="rank-meta">居家整理 · 昨天</span>
+                            </div>
+                            <span class="rank-score">89分</span>
+                        </a>
+                        <a href="#" class="ranking-item">
+                            <div class="rank-num">5</div>
+                            <div class="rank-content">
+                                <h4 class="rank-title">适合春天的几首轻音乐</h4>
+                                <span class="rank-meta">音乐分享 · 2天前</span>
+                            </div>
+                            <span class="rank-score">87分</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 侧边栏/活动 -->
+                <aside>
+                    <div class="section-header" style="margin-bottom: 20px;">
+                        <h2 class="section-title" style="font-size: 1.4rem;">社区活动</h2>
+                    </div>
+                    <div class="card" style="background-color: var(--bg-off-white); border: none; box-shadow: none;">
+                        <div style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); padding: 20px; border-radius: var(--radius-md); color: white; text-align: center;">
+                            <h3 style="font-size: 1.3rem; margin-bottom: 10px;">📸 春日摄影大赛</h3>
+                            <p style="font-size: 0.9rem; margin-bottom: 20px; opacity: 0.9;">上传你眼中的春天，赢取精美周边！</p>
+                            <button class="btn-primary" style="width: 100%; background: white; color: var(--primary-color);">立即参与</button>
+                        </div>
+                        
+                        <div style="padding: 20px; text-align: center;">
+                            <p style="font-size: 0.9rem; color: var(--text-light);">本月累计参与：<strong style="color: var(--text-dark);">1,245</strong> 人</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 特色功能 -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">✨</div>
+                    <h3>纯净社区</h3>
+                    <p>无广告打扰，只有纯粹的内容分享与真诚的互动。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">🌍</div>
+                    <h3>温暖视角</h3>
+                    <p>专注于发现生活中的微小美好，用正能量温暖彼此。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon-wrapper">🤝</div>
+                    <h3>互助社群</h3>
+                    <p>遇到困难？在这里找到志同道合的朋友提供帮助。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px; color: white;">
+                        <span>🌸</span> 吧有你
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        致力于打造一个温暖、治愈、纯粹的网络社区。在这里，每一个微小的瞬间都值得被记录，每一份善意都值得被传递。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>探索</h4>
+                    <ul>
+                        <li><a href="#">最新发布</a></li>
+                        <li><a href="#">热门话题</a></li>
+                        <li><a href="#">排行榜</a></li>
+                        <li><a href="#">活动专区</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">加入团队</a></li>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系</h4>
+                    <ul>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">商务合作</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 吧有你春暖花开. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
