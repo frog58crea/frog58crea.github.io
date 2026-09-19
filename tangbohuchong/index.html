@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唐伯虎冲上云霄-热门动漫资讯、角色解析与粉丝社区指南</title>
+    <meta name="description" content="唐伯虎冲上云霄动漫专题页，提供最新剧情解析、角色能力对比、幕后制作花絮及粉丝交流社区，一站式了解这部热血奇幻作品。">
+    <meta name="keywords" content="唐伯虎冲上云霄,动漫,热血,奇幻,角色解析">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2f3542;
+            --accent-color: #ffa502;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-light: #747d8c;
+            --spacing-unit: 1rem;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            color: var(--secondary-color);
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--primary-color);
+            margin-right: 12px;
+            border-radius: 3px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+            margin-left: 4px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-main);
+            font-size: 1.2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e272e 0%, #2f3542 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(255, 71, 87, 0.2) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 20%, rgba(255, 165, 2, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #dfe4ea;
+            margin-bottom: 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: #ff6b81;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            border-color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Main Content Grid */
+        .main-content {
+            padding: 3rem 0;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--secondary-color);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f1f2f6;
+            padding-top: 1rem;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Sidebar Styles */
+        .sidebar-section {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            margin-bottom: 2rem;
+        }
+
+        .rank-list {
+            counter-reset: rank;
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f1f2f6;
+        }
+
+        .rank-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-item::before {
+            counter-increment: rank;
+            content: counter(rank);
+            width: 24px;
+            height: 24px;
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .rank-item:nth-child(1)::before { background-color: #ff4757; color: white; }
+        .rank-item:nth-child(2)::before { background-color: #ffa502; color: white; }
+        .rank-item:nth-child(3)::before { background-color: #ff6b81; color: white; }
+
+        .rank-info {
+            flex: 1;
+        }
+
+        .rank-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: block;
+        }
+
+        .rank-views {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Character Grid */
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .char-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: var(--transition);
+        }
+
+        .char-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+        }
+
+        .char-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            object-fit: cover;
+            border: 3px solid var(--bg-color);
+        }
+
+        .char-name {
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: var(--secondary-color);
+        }
+
+        .char-role {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #dfe4ea;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a {
+            color: #a4b0be;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: #747d8c;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                display: none; /* Simplified mobile nav for this demo */
+            }
+
+            .nav-container {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">唐伯虎<span>冲上云霄</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">剧情解析</a></li>
+                    <li><a href="#">角色图鉴</a></li>
+                    <li><a href="#">幕后制作</a></li>
+                    <li><a href="#">周边商城</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn" aria-label="搜索">🔍</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-tags">
+                    <span class="tag">#热血</span>
+                    <span class="tag">#奇幻</span>
+                    <span class="tag">#冒险</span>
+                    <span class="tag">#国潮</span>
+                </div>
+                <h1>唐伯虎冲上云霄</h1>
+                <p>穿越时空的才情与武道，在云端之上书写传奇篇章。探索唐伯虎如何以画入道，以剑破空，成就一代宗师之路。</p>
+                <div class="cta-group">
+                    <a href="#" class="btn btn-primary">开始阅读</a>
+                    <a href="#" class="btn btn-outline">观看动画</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container main-content">
+            <div class="grid-layout">
+                <!-- Left Content -->
+                <div class="content-area">
+                    
+                    <!-- Latest Updates -->
+                    <section class="section">
+                        <h2 class="section-title">最新资讯</h2>
+                        <div class="card">
+                            <img src="https://picsum.photos/seed/manga1/800/400" alt="最新剧情封面" class="card-image">
+                            <div class="card-content">
+                                <div class="card-meta">
+                                    <span>2023-10-24</span>
+                                    <span>剧情解析</span>
+                                </div>
+                                <h3 class="card-title">第45话：云巅之战的真相</h3>
+                                <p class="card-desc">随着剧情的深入，唐伯虎终于揭开了冲上云霄背后的古老秘密。本次更新将重点解析战斗中的阵法变化与画中世界的物理法则。</p>
+                                <div class="card-footer">
+                                    <span class="read-more">阅读全文 &rarr;</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://picsum.photos/seed/manga2/800/400" alt="角色专访" class="card-image">
+                            <div class="card-content">
+                                <div class="card-meta">
+                                    <span>2023-10-20</span>
+                                    <span>角色专访</span>
+                                </div>
+                                <h3 class="card-title">专访画师：如何表现水墨与火力的融合</h3>
+                                <p class="card-desc">本次专访中，主笔画师分享了在表现唐伯虎技能“泼墨成兵”时的创作心路历程与技法细节。</p>
+                                <div class="card-footer">
+                                    <span class="read-more">阅读全文 &rarr;</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Character Guide -->
+                    <section class="section">
+                        <h2 class="section-title">主要角色</h2>
+                        <div class="character-grid">
+                            <article class="char-card">
+                                <img src="https://picsum.photos/seed/char1/200/200" alt="唐伯虎" class="char-avatar">
+                                <h4 class="char-name">唐伯虎</h4>
+                                <p class="char-role">主角 / 画师剑客</p>
+                            </article>
+                            <article class="char-card">
+                                <img src="https://picsum.photos/seed/char2/200/200" alt="秋香" class="char-avatar">
+                                <h4 class="char-name">秋香</h4>
+                                <p class="char-role">女主角 / 灵魂导师</p>
+                            </article>
+                            <article class="char-card">
+                                <img src="https://picsum.photos/seed/char3/200/200" alt="祝枝山" class="char-avatar">
+                                <h4 class="char-name">祝枝山</h4>
+                                <p class="char-role">挚友 / 爆笑担当</p>
+                            </article>
+                            <article class="char-card">
+                                <img src="https://picsum.photos/seed/char4/200/200" alt="华太师" class="char-avatar">
+                                <h4 class="char-name">华太师</h4>
+                                <p class="char-role">反派 / 权谋家</p>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Sidebar -->
+                <aside class="sidebar">
+                    <!-- Hot Ranking -->
+                    <div class="sidebar-section">
+                        <h3 class="section-title" style="font-size: 1.3rem; margin-bottom: 1rem;">热门话题</h3>
+                        <ul class="rank-list">
+                            <li class="rank-item">
+                                <div class="rank-info">
+                                    <span class="rank-title">唐伯虎的七十二变技能详解</span>
+                                </div>
+                            </li>
+                            <li class="rank-item">
+                                <div class="rank-info">
+                                    <span class="rank-title">漫画中隐藏的彩蛋合集</span>
+                                </div>
+                            </li>
+                            <li class="rank-item">
+                                <div class="rank-info">
+                                    <span class="rank-title">秋香角色的情感线走向预测</span>
+                                </div>
+                            </li>
+                            <li class="rank-item">
+                                <div class="rank-info">
+                                    <span class="rank-title">动画化后的画风改动对比</span>
+                                </div>
+                            </li>
+                            <li class="rank-item">
+                                <div class="rank-info">
+                                    <span class="rank-title">粉丝自制同人作品展示</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Ads / Promo Placeholder -->
+                    <div class="sidebar-section" style="background: linear-gradient(135deg, #2f3542, #57606f); color: white; text-align: center; padding: 2rem;">
+                        <h4 style="margin-bottom: 1rem;">加入粉丝群</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 1.5rem; opacity: 0.9;">第一时间获取最新连载情报，参与线下活动。</p>
+                        <button class="btn btn-primary" style="background-color: white; color: var(--secondary-color); font-size: 0.9rem;">扫码加入</button>
+                    </div>
+
+                    <!-- FAQ -->
+                    <div class="sidebar-section">
+                        <h3 class="section-title" style="font-size: 1.3rem; margin-bottom: 1rem;">常见问题</h3>
+                        <div style="font-size: 0.9rem;">
+                            <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary-color);">Q: 在哪里可以阅读正版漫画？</strong></p>
+                            <p style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 0.85rem;">A: 请关注官方合作的漫画平台，支持作者正版创作。</p>
+                            
+                            <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary-color);">Q: 动画版什么时候播出？</strong></p>
+                            <p style="color: var(--text-light); font-size: 0.85rem;">A: 制作组正在紧张筹备中，敬请期待官方公告。</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于唐伯虎冲上云霄</h4>
+                    <p style="font-size: 0.9rem; color: #a4b0be; line-height: 1.6;">
+                        这是一个融合了历史典故与现代奇幻设定的原创故事，旨在展现中华传统文化的魅力与热血少年的成长之路。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">剧情介绍</a></li>
+                        <li><a href="#">角色列表</a></li>
+                        <li><a href="#">联系作者</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>法律条款</h4>
+                    <ul>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">用户协议</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 唐伯虎冲上云霄专题站. All rights reserved. 此页面为设计展示用，非官方网站。
+            </div>
+        </div>
+    </footer>
+
+</body>
+                              </html>
