@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="受骗防骗指南 - 揭露常见网络诈骗手段，提供电信诈骗、金融诈骗识别方法及维权自救建议，帮助用户建立安全意识，避免财产损失。">
+    <meta name="keywords" content="受骗, 防骗指南, 电信诈骗, 网络诈骗, 维权, 拒绝受骗">
+    <title>受骗-防骗指南与维权自救知识库</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --primary-hover: #b71c1c;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .emergency-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .emergency-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            font-size: 1rem;
+            outline: none;
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.1);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-color);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 40px var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Content Section */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-header h2::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+            border-color: rgba(211, 47, 47, 0.2);
+        }
+
+        .article-title {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .article-title a:hover {
+            color: var(--primary-color);
+        }
+
+        .article-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: #999;
+            display: flex;
+            gap: 16px;
+        }
+
+        .meta-tag {
+            background-color: #ffebee;
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* Sidebar */
+        .sidebar-section {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        .sidebar-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-list li {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .sidebar-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .sidebar-list a {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .sidebar-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .warning-box {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 16px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .warning-box h4 {
+            color: #e65100;
+            margin-bottom: 8px;
+        }
+
+        .warning-box p {
+            font-size: 0.9rem;
+            color: #5d4037;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            grid-column: 1 / -1;
+            margin-top: 20px;
+        }
+
+        details {
+            background: var(--card-bg);
+            margin-bottom: 10px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        summary {
+            padding: 16px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.2s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-content {
+            padding: 0 20px 20px 20px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+            margin-top: 10px;
+            padding-top: 16px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #263238;
+            color: #cfd8dc;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-color);
+        }
+
+        .disclaimer {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 20px var(--spacing-unit);
+            border-top: 1px solid #37474f;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #78909c;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+
+            .header-inner {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a href="#" class="logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            防骗指南
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">最新骗局</a></li>
+                <li><a href="#">常见类型</a></li>
+                <li><a href="#">维权渠道</a></li>
+                <li><a href="#">求助社区</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="emergency-btn">紧急求助</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>警惕受骗风险，守护财产安全</h1>
+        <p>网络诈骗手段层出不穷。本站提供最新的受骗案例解析、识别技巧及受骗后的紧急应对措施，助您建立全方位的防骗意识。</p>
+        <div class="search-box">
+            <input type="text" placeholder="搜索受骗案例、诈骗类型或维权方法...">
+        </div>
+    </div>
+</section>
+
+<main class="container">
+    <!-- Main Content -->
+    <section>
+        <div class="section-header">
+            <h2>最新受骗案例与预警</h2>
+            <a href="#" style="color: var(--primary-color); font-size: 0.9rem;">查看更多 &rarr;</a>
+        </div>
+
+        <article class="article-card">
+            <h3 class="article-title"><a href="#">“AI换脸”冒充亲友转账，警惕新型视觉诈骗</a></h3>
+            <p class="article-excerpt">近期出现利用深度伪造技术（Deepfake）冒充熟人领导或亲友进行视频通话诈骗的案件。骗子利用AI生成的面部和声音，诱导受害人转账。请务必在转账前通过电话或见面进行二次核实。</p>
+            <div class="article-meta">
+                <span class="meta-tag">新型诈骗</span>
+                <span>2023-10-24</span>
+                <span>阅读：1.2万</span>
+            </div>
+        </article>
+
+        <article class="article-card">
+            <h3 class="article-title"><a href="#">“刷单返利”陷阱揭秘：先甜后苦的连环套</a></h3>
+            <p class="article-excerpt">刷单是违法的，也是最常见的受骗源头之一。骗子通常以“垫资任务”为诱饵，前几单给予小额返利博取信任，随后以“任务未完成”、“卡单”等理由要求继续转账。一旦投入大额资金，即刻拉黑失联。</p>
+            <div class="article-meta">
+                <span class="meta-tag">兼职诈骗</span>
+                <span>2023-10-22</span>
+                <span>阅读：8,500</span>
+            </div>
+        </article>
+
+        <article class="article-card">
+            <h3 class="article-title"><a href="#">遭遇网络钓鱼链接，个人信息泄露怎么办？</a></h3>
+            <p class="article-excerpt">点击不明来源的短信链接或邮件附件可能导致账号被盗。如果怀疑已受骗，应立即修改相关密码，开启双重验证（2FA），并检查银行账单异常交易。</p>
+            <div class="article-meta">
+                <span class="meta-tag">信息安全</span>
+                <span>2023-10-20</span>
+                <span>阅读：6,300</span>
+            </div>
+        </article>
+
+        <article class="article-card">
+            <h3 class="article-title"><a href="#">“注销校园贷”骗局：恐吓手段下的资产洗劫</a></h3>
+            <p class="article-excerpt">骗子冒充金融平台客服，声称用户的校园贷账户未注销会影响征信。随后诱导受害人进入屏幕共享软件，诱导其将资金转入所谓的“安全账户”进行验证。</p>
+            <div class="article-meta">
+                <span class="meta-tag">校园贷</span>
+                <span>2023-10-18</span>
+                <span>阅读：5,900</span>
+            </div>
+        </article>
+
+        <!-- FAQ Section -->
+        <div class="section-header" style="margin-top: 40px;">
+            <h2>受骗后常见问题解答 (FAQ)</h2>
+        </div>
+        <div class="faq-section">
+            <details>
+                <summary>受骗后第一时间应该做什么？</summary>
+                <div class="faq-content">
+                    <p>1. <strong>立即止损</strong>：如果资金尚未转出，立即停止操作；如果已转出，尝试联系银行进行挂失或拦截。</p>
+                    <p>2. <strong>保留证据</strong>：截图保存聊天记录、转账凭证、对方账号信息等所有证据。</p>
+                    <p>3. <strong>报警处理</strong>：携带证据前往当地派出所报案，或通过“国家反诈中心”APP进行举报。</p>
+                </div>
+            </details>
+            <details>
+                <summary>如何判断自己是否遭遇了电信诈骗？</summary>
+                <div class="faq-content">
+                    <p>凡是提到“安全账户”的、要求你进行“屏幕共享”的、索要验证码的、以及以“公检法”名义要求转账的，99%都是诈骗。</p>
+                </div>
+            </details>
+            <details>
+                <summary>被骗后，资金能追回吗？</summary>
+                <div class="faq-content">
+                    <p>追回难度较大，取决于骗子资金流向和警方侦查速度。越快报警，追回的可能性越高。切勿抱有“交解冻费就能拿回钱”的幻想，这是二次诈骗。</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Sidebar -->
+    <aside>
+        <div class="warning-box">
+            <h4>紧急提示</h4>
+            <p>如果您正在遭受电话骚扰或已被骗，请立即挂断电话，不要透露任何验证码或密码。</p>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>常见诈骗类型</h3>
+            <ul class="sidebar-list">
+                <li><a href="#">冒充公检法</a></li>
+                <li><a href="#">杀猪盘（感情诈骗）</a></li>
+                <li><a href="#">虚假投资理财</a></li>
+                <li><a href="#">注销“校园贷”</a></li>
+                <li><a href="#">AI 换脸诈骗</a></li>
+                <li><a href="#">游戏币/装备交易</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>维权渠道</h3>
+            <ul class="sidebar-list">
+                <li><a href="#">国家反诈中心APP</a></li>
+                <li><a href="#">110 报警电话</a></li>
+                <li><a href="#">12321 网络不良与垃圾信息举报受理中心</a></li>
+                <li><a href="#">中国人民银行征信中心</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>相关阅读</h3>
+            <ul class="sidebar-list">
+                <li><a href="#">如何设置高强度的密码？</a></li>
+                <li><a href="#">防范电信诈骗十问十答</a></li>
+                <li><a href="#">遇到“客服退款”怎么办？</a></li>
+            </ul>
+        </div>
+    </aside>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>防骗指南</h4>
+            <p style="font-size: 0.9rem; line-height: 1.8;">
+                专注提供网络安全与防骗知识普及。我们致力于帮助公众识别各类网络陷阱，建立健康的网络消费习惯，共同维护清朗的网络空间。
+            </p>
+        </div>
+        <div class="footer-col">
+            <h4>快速链接</h4>
+            <ul>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">免责声明</a></li>
+                <li><a href="#">联系方式</a></li>
+                <li><a href="#">隐私政策</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>紧急援助</h4>
+            <ul>
+                <li><a href="#">110 (报警)</a></li>
+                <li><a href="#">96110 (反诈专线)</a></li>
+                <li><a href="#">12345 (政务服务热线)</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="disclaimer">
+        <p>本站内容仅供参考，不构成任何法律建议。如您发现受骗，请第一时间报警处理。</p>
+    </div>
+</footer>
+
+</body>
+</html>
