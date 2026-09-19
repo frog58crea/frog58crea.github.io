@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NDSill游戏 - 专业的任天堂DS模拟器游戏资源下载与攻略指南平台，提供模拟器安装教程、热门游戏ROM下载及玩家社区讨论。">
+    <meta name="keywords" content="ndsill游戏,任天堂DS,模拟器,游戏下载,NDS ROM,游戏攻略">
+    <title>ndsill游戏-任天堂DS模拟器资源与游戏攻略平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --secondary-color: #34495e;
+            --bg-color: #f4f6f7;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #7f8c8d;
+            --border-radius: 8px;
+            --spacing: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: #f0f2f5;
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 200px;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px var(--spacing);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            height: 180px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 2px 8px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        .card-content {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-actions {
+            margin-top: auto;
+        }
+
+        .btn-sm {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            text-align: center;
+            border-radius: 4px;
+            font-size: 14px;
+            border: 1px solid var(--secondary-color);
+            color: var(--secondary-color);
+            background: transparent;
+        }
+
+        .btn-sm:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        /* Simulator Guide */
+        .guide-section {
+            background-color: #eef2f5;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-bottom: 60px;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .guide-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .guide-item h3::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .guide-steps ol {
+            padding-left: 20px;
+            color: var(--text-light);
+        }
+
+        .guide-steps li {
+            margin-bottom: 10px;
+        }
+
+        .guide-steps li strong {
+            color: var(--text-main);
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-box h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-box p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                display: none; /* Simplified for mobile */
+            }
+            
+            .search-box {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo">
+            NDS<span>ill</span>游戏
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">游戏库</a></li>
+                <li><a href="#">模拟器</a></li>
+                <li><a href="#">攻略</a></li>
+                <li><a href="#">论坛</a></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索游戏或ROM...">
+            <button>🔍</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>重温掌机黄金时代</h1>
+        <p>汇集任天堂DS全系热门游戏资源，提供最权威的模拟器安装指南与游戏攻略，随时随地畅玩经典。</p>
+        <div class="cta-buttons">
+            <button class="btn btn-primary" onclick="window.location.href='#games'">开始下载</button>
+            <button class="btn btn-secondary" onclick="window.location.href='#guide'">查看教程</button>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Features -->
+        <section class="features">
+            <div class="feature-box">
+                <span class="feature-icon">💾</span>
+                <h4>海量资源</h4>
+                <p>收录超过5000款NDS游戏，涵盖动作、冒险、益智等各类题材。</p>
+            </div>
+            <div class="feature-box">
+                <span class="feature-icon">🛡️</span>
+                <h4>安全下载</h4>
+                <p>所有资源经过人工检测，确保文件完整且无病毒风险。</p>
+            </div>
+            <div class="feature-box">
+                <span class="feature-icon">🎮</span>
+                <h4>一键模拟</h4>
+                <p>提供DSTwo、R4、Drastic等多种模拟器推荐及安装教程。</p>
+            </div>
+        </section>
+
+        <!-- Latest Games -->
+        <section id="games">
+            <div class="section-title">
+                <h2>热门游戏推荐</h2>
+                <a href="#">查看更多 &gt;</a>
+            </div>
+            <div class="game-grid">
+                <!-- Game Card 1 -->
+                <article class="game-card">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge">热门</span>
+                        <img src="https://picsum.photos/seed/naruto/300/200" alt="Naruto Shippuden">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">火影忍者疾风传</h3>
+                        <div class="card-meta">
+                            <span>动作/格斗</span>
+                            <span>1.2GB</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-sm">下载ROM</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game Card 2 -->
+                <article class="game-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://picsum.photos/seed/mario/300/200" alt="Super Mario 3D Land">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">超级马里奥 3D陆地</h3>
+                        <div class="card-meta">
+                            <span>冒险/平台</span>
+                            <span>890MB</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-sm">下载ROM</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game Card 3 -->
+                <article class="game-card">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge">RPG</span>
+                        <img src="https://picsum.photos/seed/pokemon/300/200" alt="Pokemon White">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">宝可梦 白金版</h3>
+                        <div class="card-meta">
+                            <span>角色扮演</span>
+                            <span>1.5GB</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-sm">下载ROM</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game Card 4 -->
+                <article class="game-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://picsum.photos/seed/zelda/300/200" alt="The Legend of Zelda">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">塞尔达传说：时空之章</h3>
+                        <div class="card-meta">
+                            <span>冒险</span>
+                            <span>1.1GB</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-sm">下载ROM</button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Game Card 5 -->
+                <article class="game-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://picsum.photos/seed/animal/300/200" alt="Animal Crossing">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">动物森友会</h3>
+                        <div class="card-meta">
+                            <span>模拟/生活</span>
+                            <span>256MB</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-sm">下载ROM</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game Card 6 -->
+                <article class="game-card">
+                    <div class="card-img-wrapper">
+                        <span class="card-badge">竞速</span>
+                        <img src="https://picsum.photos/seed/mario/300/200" alt="Mario Kart">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">马里奥赛车 DS</h3>
+                        <div class="card-meta">
+                            <span>竞速</span>
+                            <span>512MB</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-sm">下载ROM</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Simulator Guide -->
+        <section id="guide">
+            <div class="section-title">
+                <h2>模拟器安装指南</h2>
+            </div>
+            <div class="guide-section">
+                <div class="guide-grid">
+                    <div class="guide-item guide-steps">
+                        <h3>第一步：选择模拟器</h3>
+                        <p>根据你的设备（PC、安卓手机或平板）选择合适的模拟器。对于PC用户，推荐使用Drastic或DeSmuME；对于安卓用户，Drastic体验最佳。</p>
+                        <br>
+                        <ol>
+                            <li>访问NDSill游戏官网下载专区。</li>
+                            <li>下载对应系统版本的安装包。</li>
+                            <li>安装后首次运行可能需要加载BIOS文件。</li>
+                        </ol>
+                    </div>
+                    <div class="guide-item">
+                        <h3>第二步：准备ROM文件</h3>
+                        <p>ROM是游戏的数据文件。确保你拥有该游戏的合法授权或购买记录。将下载的.nds文件放入模拟器的游戏目录中。</p>
+                        <br>
+                        <h3>第三步：运行与设置</h3>
+                        <p>启动模拟器，在设置中调整画面比例（推荐4:3或16:9）、触控灵敏度以及存档路径，以获得最佳体验。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <div class="section-title">
+                <h2>常见问题 (FAQ)</h2>
+            </div>
+            <div class="guide-grid">
+                <details class="feature-box">
+                    <summary style="cursor: pointer; font-weight: 600;">模拟器运行很卡怎么办？</summary>
+                    <p style="margin-top: 10px; color: var(--text-light);">建议关闭后台其他占用内存的程序。在模拟器设置中降低帧率限制，或选择性能更好的模拟器内核（如Drastic）。</p>
+                </details>
+                <details class="feature-box">
+                    <summary style="cursor: pointer; font-weight: 600;">如何进行存档？</summary>
+                    <p style="margin-top: 10px; color: var(--text-light);">大多数模拟器支持自动存档。你可以手动导出存档文件（.sav）备份到本地，防止数据丢失。</p>
+                </details>
+                <details class="feature-box">
+                    <summary style="cursor: pointer; font-weight: 600;">支持哪些语言？</summary>
+                    <p style="margin-top: 10px; color: var(--text-light);">NDSill游戏库中的大部分热门游戏（如马里奥、宝可梦）已汉化，部分冷门游戏可能仅支持日文或英文原版。</p>
+                </details>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>NDSill游戏</h4>
+            <p style="color: #bdc3c7; font-size: 0.9rem; line-height: 1.8;">
+                致力于为玩家提供最便捷的任天堂DS游戏资源与模拟器技术支持。我们尊重知识产权，所有资源仅供学习交流使用。
+            </p>
+        </div>
+        <div class="footer-col">
+            <h4>快速链接</h4>
+            <ul>
+                <li><a href="#">游戏库</a></li>
+                <li><a href="#">模拟器下载</a></li>
+                <li><a href="#">新手入门</a></li>
+                <li><a href="#">硬件推荐</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>热门分类</h4>
+            <ul>
+                <li><a href="#">动作游戏</a></li>
+                <li><a href="#">角色扮演 (RPG)</a></li>
+                <li><a href="#">解谜游戏</a></li>
+                <li><a href="#">体育竞技</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>联系我们</h4>
+            <ul>
+                <li><a href="#">意见反馈</a></li>
+                <li><a href="#">投稿指南</a></li>
+                <li><a href="#">免责声明</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2023 NDSill游戏资源站 版权所有 | 仅供学习交流，请支持正版
+    </div>
+</footer>
+
+</body>
+  </html>
